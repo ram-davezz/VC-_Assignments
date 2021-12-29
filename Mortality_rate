@@ -1,0 +1,68 @@
+#include<iostream>
+//#include<string>
+
+using namespace std;
+
+class Illness
+{
+public:
+	virtual int GetMortalityRate()=0;
+};
+
+class Virus:public Illness
+{
+	int MortalityRate;
+public:
+	Virus(int _MortalityRate):MortalityRate(_MortalityRate){}
+	int GetMortalityRate()
+	{
+		return MortalityRate;
+	}
+};
+
+class CovidVirus :public Illness
+{
+	int MortalityRate;
+public:
+	CovidVirus(int _MortalityRate) :MortalityRate(_MortalityRate) {}
+	int GetMortalityRate()
+	{
+		return MortalityRate;
+	}
+};
+
+class HivVirus :public Illness
+{
+	int MortalityRate;
+public:
+	HivVirus(int _MortalityRate) :MortalityRate(_MortalityRate) {}
+	int GetMortalityRate()
+	{
+		return MortalityRate;
+	}
+};
+
+class BirdFlu :public Illness
+{
+	int MortalityRate;
+public:
+	BirdFlu(int _MortalityRate) :MortalityRate(_MortalityRate) {}
+	int GetMortalityRate()
+	{
+		return MortalityRate;
+	}
+};
+
+int main()
+{
+	Illness* parr[4] = {new Virus(566),new CovidVirus(7890),
+					new HivVirus(879),new BirdFlu(342)};
+	cout << "MortalityRate of this sickness:\n";
+	cout << "Virus  CovVirus HivVirus BirdFlu\n";
+	for (int i = 0; i<4;i++)
+	{
+		Illness* p = parr[i];
+		cout << p->GetMortalityRate()<<"\t  ";
+		p = parr[i];
+	}
+}
