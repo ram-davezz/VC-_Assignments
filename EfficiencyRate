@@ -1,0 +1,53 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+
+class Engine{
+  public:double a,b;
+  void get_data()
+  {
+      cin>>a>>b;
+  }
+   void steam(){
+        cout<<"For steam"<<endl;
+        cout<<"Efficiency:"<<a/b<<endl;
+    }
+  virtual void petrol()=0;
+  virtual void diesel()=0;
+};
+
+class Combustion : public Engine
+{
+    public:
+    void petrol(){
+        cout<<"For petrol"<<endl;
+        cout<<"Efficiency:"<<a/b<<endl;
+    }
+    
+    public:
+    void diesel(){
+        cout<<"For diesel"<<endl;
+        cout<<"Efficiency:"<<a/b<<endl;
+    }
+};
+
+
+int main()
+{
+    Combustion t;
+    Engine *st=&t;
+    cout<<"Enter the values for petrol"<<endl;
+    st->get_data();
+    st->petrol();
+    cout<<"Enter the values for diesel"<<endl;
+    st->get_data();
+    st->diesel();
+    
+    cout<<"Enter the values for steam"<<endl;
+    st->get_data();
+    st->steam();
+    
+    
+    getch();
+    return 0;
+}
