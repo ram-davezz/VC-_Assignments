@@ -55,8 +55,8 @@ public:
 
 int main()
 {
-	Illness* parr[4] = {new Virus(566),new CovidVirus(7890),
-					new HivVirus(879),new BirdFlu(342)};
+	Illness* parr[4] = {new Virus(110000),new CovidVirus(5434319),
+					new HivVirus(46000),new BirdFlu(45696)};
 	cout << "MortalityRate of this sickness:\n";
 	cout << "Virus  CovVirus HivVirus BirdFlu\n";
 	for (int i = 0; i<4;i++)
