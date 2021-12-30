@@ -1,53 +1,79 @@
-#include <iostream>
-#include<conio.h>
-using namespace std;
 
+#include <iostream>
+
+using namespace std;
 class Engine{
-  public:double a,b;
-  void get_data()
-  {
-      cin>>a>>b;
-  }
-   void steam(){
-        cout<<"For steam"<<endl;
-        cout<<"Efficiency:"<<a/b<<endl;
-    }
-  virtual void petrol()=0;
-  virtual void diesel()=0;
+    public:
+          double a,b;
+          void getdata()
+          {
+              cin>>a>>b;
+          }
+       
 };
 
-class Combustion : public Engine
+class Internal_engine:public Engine
+{
+      public:virtual void get_efficiency()=0;
+};
+
+class Petrol:public Internal_engine
 {
     public:
-    void petrol(){
-        cout<<"For petrol"<<endl;
-        cout<<"Efficiency:"<<a/b<<endl;
-    }
-    
-    public:
-    void diesel(){
-        cout<<"For diesel"<<endl;
-        cout<<"Efficiency:"<<a/b<<endl;
+    void get_efficiency()
+    {
+        cout<<"Efficiency of petrol:"<<a/b<<endl;
     }
 };
 
+class Diesel:public Internal_engine
+{
+    public:
+    void get_efficiency()
+    {
+        cout<<"Efficiency of diesel:"<<a/b<<endl;
+    }
+    
+};
+
+
+class External_engine:public Engine
+{
+     public:virtual void get_efficiency()=0; 
+};
+
+class Steam:public External_engine
+{
+  public:
+  void get_efficiency()
+  {
+      cout<<"Efficiency of steam:"<<a/b<<endl;
+  }
+};
 
 int main()
 {
-    Combustion t;
-    Engine *st=&t;
-    cout<<"Enter the values for petrol"<<endl;
-    st->get_data();
-    st->petrol();
-    cout<<"Enter the values for diesel"<<endl;
-    st->get_data();
-    st->diesel();
+   
+    Petrol p;
+    Internal_engine *ep=&p;
+    cout<<"Enter the values for petrol:"<<endl;
+    ep->getdata();
+    ep->get_efficiency();
     
-    cout<<"Enter the values for steam"<<endl;
-    st->get_data();
-    st->steam();
+    Diesel d;
+    Internal_engine *ed=&d;
+    cout<<"Enter the values for diesel:"<<endl;
+    ed->getdata();
+    ed->get_efficiency();
+    
+    Steam s;
+    External_engine *es=&s;
+    cout<<"Enter the values for steam:"<<endl;
+    es->getdata();
+    es->get_efficiency();
     
     
-    getch();
+
     return 0;
 }
+
