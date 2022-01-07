@@ -77,11 +77,7 @@ namespace MatrixGrid
                         boardLayout.DrawLine(layoutPen, X, Y, X, Y + this.m_Height * this.m_NoOfRows);
                         X = X + this.m_width;
                     }
-                //    if(count1==count2)
-                //{
-                //    count1 = 0;
-                //    count2 = 0;
-                //}
+              
                
                 }
          
@@ -106,22 +102,13 @@ namespace MatrixGrid
                 count1++;
                 Thread.Sleep(1000);
 
-                //if(count1==count2)
-                //{
-                //    break;
-                //}
-                }
          
 
-            //CounterThread = new Thread(new ThreadStart(Counter));
+            
 
             this.Invalidate();
 
-            //m_NoOfRows = count2;
-            //m_NoOfCols = count2;
-            //g.Clear(Color.Blue);
-
-            //Thread.Sleep(1000);
+        
         }
 
 
@@ -148,7 +135,7 @@ namespace MatrixGrid
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-          
+          CounterThread.Resume();
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
