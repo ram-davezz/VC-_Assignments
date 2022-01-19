@@ -1,0 +1,9 @@
+D:\VC++\MatrixGrid\bin\Debug\MatrixGrid.exe.config
+D:\VC++\MatrixGrid\bin\Debug\MatrixGrid.exe
+D:\VC++\MatrixGrid\bin\Debug\MatrixGrid.pdb
+D:\VC++\MatrixGrid\obj\Debug\MatrixGrid.Properties.Resources.resources
+D:\VC++\MatrixGrid\obj\Debug\MatrixGrid.csproj.GenerateResource.cache
+D:\VC++\MatrixGrid\obj\Debug\MatrixGrid.csproj.CoreCompileInputs.cache
+D:\VC++\MatrixGrid\obj\Debug\MatrixGrid.exe
+D:\VC++\MatrixGrid\obj\Debug\MatrixGrid.pdb
+D:\VC++\MatrixGrid\obj\Debug\MatrixGrid.FormMatrixGrid.resources
